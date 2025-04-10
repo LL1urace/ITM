@@ -1,11 +1,11 @@
 Практика:
 
-1. Прочитайте статью про исключения и запомните их виды, хотя-бы частично https://pythonworld.ru/tipy-dannyx-v-python/isklyucheniya-v-python-konstrukciya-try-except-dlya-obrabotki-isklyuchenij.html
-2. Посмотрите видео и повторите код: https://www.youtube.com/watch?time_continue=562&v=LRudk3FQLoM&embeds_referring_euri=https%3A%2F%2Fyastatic.net%2Fvideo-player%2F0x85db8230c45%2Fpages-common%2Fyoutube%2Fyoutube.html&source_ve_path=Mjg2NjY&feature=emb_logo
-3. Посмотрите видео по дебагу кода https://www.youtube.com/watch?v=HpJYVIRuQbU&feature=youtu.be (Старайтесь в дальнейшем, когда пишете код, запускать его в режиме дебага и учиться просматривать значения переменных)
-4. Прочитайте статью про логгирование https://habr.com/ru/companies/wunderfund/articles/683880/
+(+) 1. Прочитайте статью про исключения и запомните их виды, хотя-бы частично https://pythonworld.ru/tipy-dannyx-v-python/isklyucheniya-v-python-konstrukciya-try-except-dlya-obrabotki-isklyuchenij.html
+(+) 2. Посмотрите видео и повторите код: https://www.youtube.com/watch?time_continue=562&v=LRudk3FQLoM&embeds_referring_euri=https%3A%2F%2Fyastatic.net%2Fvideo-player%2F0x85db8230c45%2Fpages-common%2Fyoutube%2Fyoutube.html&source_ve_path=Mjg2NjY&feature=emb_logo
+(+) 3. Посмотрите видео по дебагу кода https://www.youtube.com/watch?v=HpJYVIRuQbU&feature=youtu.be (Старайтесь в дальнейшем, когда пишете код, запускать его в режиме дебага и учиться просматривать значения переменных)
+(+) 4. Прочитайте статью про логгирование https://habr.com/ru/companies/wunderfund/articles/683880/
 5. Написать программу на Python для решения квадратного уравнения ax^2 + bx + c = 0. Если дискриминант отрицателен, программа должна выдать ошибку и предложить пользователю попробовать еще раз с другими коэффициентами. При выполнении скрипта в лог должна записываться информация о успехе или неудаче операции.
 6. Написать программу для генерации случайных чисел в заданном диапазоне. Если пользователь ввел недопустимые границы диапазона (например, меньше нуля), программа должна вывести ошибку и попросить ввести диапазон заново. Информация об ошибках должна быть записана в лог.
 7. Написать программу для нахождения среднего арифметического списка чисел. Если при вводе списка чисел была допущена ошибка (например, был передан не список, а строка), программа должна корректно обработать эту ошибку и выдать соответствующее сообщение.      Информация об ошибках должна быть записана в лог.
-8. Посмотрите видео и повторите код, с помощью которого реализуются собственные исключения https://www.youtube.com/watch?v=XR-16WMXZOY&t=387s
+(+) 8. Посмотрите видео и повторите код, с помощью которого реализуются собственные исключения https://www.youtube.com/watch?v=XR-16WMXZOY&t=387s
 Постарайтесь разобраться в данном коде.
