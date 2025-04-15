@@ -1,0 +1,15 @@
+2025-04-10 14:10:31,993 INFO The values of x and y are 2 and 5.
+2025-04-10 14:10:31,993 INFO x/y successful with result: 0.4.
+2025-04-10 14:10:31,993 INFO The values of x and y are 3 and 7.
+2025-04-10 14:10:31,993 INFO x/y successful with result: 0.42857142857142855.
+2025-04-10 14:10:31,993 INFO The values of x and y are 6 and 12.
+2025-04-10 14:10:31,993 INFO x/y successful with result: 0.5.
+2025-04-10 14:10:31,993 INFO The values of x and y are 4 and 0.
+2025-04-10 14:10:31,993 ERROR ZeroDivisionError
+Traceback (most recent call last):
+  File "E:\Учёба\Для проектиков по IT\ITM\2_Exceptions,_logging\task-4_main.py", line 18, in <module>
+    x/y
+    ~^~
+ZeroDivisionError: division by zero
+2025-04-10 14:10:31,996 INFO The values of x and y are 10 and 1.
+2025-04-10 14:10:31,996 INFO x/y successful with result: 10.0.
