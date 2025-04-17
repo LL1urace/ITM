@@ -7,4 +7,6 @@ def output_range() -> None:
     for digit in range(101):
         print(digit)
 
+
+
 output_range()

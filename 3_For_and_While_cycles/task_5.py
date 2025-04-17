@@ -8,9 +8,13 @@
 # …..
 # 9*1 = 9
 # 9*2=18
-def output_range() -> None:
-    """Выводит числа от 0 до 100 включительно."""
-    for digit in range(101):
-        print(digit)
+def output_multiplication_table() -> None:
+    """Выводит таблицу умножения от 0 до 9 с множителями от 1 до 10."""
+    for multiplicand  in range(0, 10):
+        for multiplier  in range(1, 11):
+            print(f"{multiplicand} * {multiplier} = {multiplicand * multiplier}")
+        print()
 
-output_range()
+
+
+output_multiplication_table()
