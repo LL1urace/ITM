@@ -1,0 +1,126 @@
+Практика:
+
+(-) 1. Выберете себе библиотеку и покройте тестами все практические задания из предыдущих блоков.
+
+(-) 1_Data_structures
+    (+) part_1
+        (+) task_1
+        (+) task_2
+        (+) task_3
+        (+) task_4
+        (+) task_5
+        (+) task_6
+        (+) task_7
+        (+) task_8
+        (+) task_9
+        (+) task_10
+    (-) part_2
+        (+) task_1
+        (+) task_2
+        (+) task_3
+        (+) task_4
+        (+) task_5
+        (+) task_6
+        (+) task_7
+        (+) task_8
+        (+) task_9
+        (+) task_10
+    (-) part_3
+        (-) task_1
+        (-) task_2
+        (-) task_3
+        (-) task_4
+        (-) task_5
+        (-) task_6
+        (-) task_7
+        (-) task_8
+        (-) task_9
+        (-) task_10
+    (-) part_4
+        (-) task_1
+        (-) task_2
+        (-) task_3
+        (-) task_4
+        (-) task_5
+    (-) part_5
+        (-) task_1-4
+    (-) part_6
+        (-) task_1
+        (-) task_2
+
+
+(-) 2_Exceptions,_logging
+    (-) task_2
+    (-) task_4
+    (-) task_5
+    (-) task_6
+    (-) task_7
+    (-) task_8
+
+
+(-) 3_For_and_While_cycles
+    (-) task_3
+    (-) task_4
+    (-) task_5
+    (-) task_6
+    (-) task_7
+    (-) task_8
+    (-) task_9
+    (-) task_10
+    (-) task_11
+    (-) task_12
+    (-) task_13
+
+
+(-) 4_If-else_conditions
+    (-) task_1
+    (-) task_2
+    (-) task_3
+    (-) task_4
+    (-) task_5
+    (-) task_6
+    (-) task_7
+    (-) task_8
+    (-) task_9
+    (-) task_10
+    (-) task_11
+
+
+(-) 5_IO_streams
+    (-) task_2
+    (-) task_3
+    (-) task_4
+    (-) task_5
+    (-) task_6
+    (-) task_7
+    (-) tasks_8
+        (-) part_3
+        (-) part_4
+        (-) part_5
+        (-) part_6
+
+
+(-) 6_OOP
+    (-) extra_task
+        (-) extra_1
+        (-) extra_2
+        (-) extra_3
+        (-) extra_4
+        (-) extra_5
+        (-) extra_6
+        (-) extra_7
+    (-) task_3
+    (-) task_4
+    (-) task_5
+    (-) task_6
+    (-) task_7
+    (-) task_8
+    (-) task_9
+    (-) task_10
+    (-) task_10_2_multipledispatch
+    (-) task_10_2_sigledispatch
+    (-) task_11
+    (-) task_12
+    (-) task_13
+    (-) task_14
+    (-) task_15

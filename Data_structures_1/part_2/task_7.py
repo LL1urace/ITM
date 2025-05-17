@@ -1,0 +1,24 @@
+# Практика
+# Часть 2. Все входные и выходные данные в заданиях этой группы являются целыми числами.
+# Все числа, для которых указано количество цифр (двузначное число, трехзначное число и т. д.), считаются положительными.
+
+# 7. Дано двузначное число. Найти сумму и произведение его цифр.
+def get_sum_and_product_of_digits(num: int) -> tuple[int,int]:
+    try:
+        a = int(num)
+    except TypeError:
+        raise TypeError("Значение не является целым числом!")
+    except ValueError:
+        raise ValueError("Значение не может быть преобразовано в число (значение)!")
+    if not 10 <= abs(a) <= 99:
+        raise ValueError("Значение не является двузначным числом!")
+    units = abs(a) % 10
+    tens = abs(a) // 10
+    sum = units + tens
+    prod = units * tens
+    return sum, prod
+
+
+
+if __name__ == "__main__":
+    pass
