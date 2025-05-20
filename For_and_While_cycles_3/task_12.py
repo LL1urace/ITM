@@ -8,4 +8,7 @@ def output_func() -> None:
         print(f"Значение функции y=x^2 при x = {x} равно: {x ** 2}")
         x += 0.5
 
-output_func()
+
+
+if __name__ == "__main__":
+    output_func()

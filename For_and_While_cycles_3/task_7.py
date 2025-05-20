@@ -7,5 +7,5 @@ def output_range() -> None:
         print(num)
 
 
-
-output_range()
+if __name__ == "__main__":
+    output_range()

@@ -39,7 +39,8 @@ class Calculator:
 
 
 # Пример использования:
-calc = Calculator()
-print(calc.addition(4, 3))  # 8
-print(calc.addition("5", "3"))  # 53
-# print(calc.addition(4, "3"))  # Исключение в перегруженном методе @method_name.register
+if __name__ == "__main__":
+    calc = Calculator()
+    print(calc.addition(4, 3))  # 8
+    print(calc.addition("5", "3"))  # 53
+    # print(calc.addition(4, "3"))  # Исключение в перегруженном методе @method_name.register

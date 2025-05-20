@@ -40,16 +40,19 @@ class People:
         """Возвращает строковое представление списка людей."""
         return f"People: {",".join(self.people_list)}" + ".\n"
 
-friends = People(["Чел1", "Чел2"])
-print(friends)
 
-friends.add_people("Чел3")
-print(friends)
 
-friends.add_people(["Чел4", "Чел5"])
+if __name__ == "__main__":
+    friends = People(["Чел1", "Чел2"])
+    print(friends)
 
-print("Список людей через итерации:")
-for person in friends:
-    print(person)
+    friends.add_people("Чел3")
+    print(friends)
 
-# friends.add_people([])
+    friends.add_people(["Чел4", "Чел5"])
+
+    print("Список людей через итерации:")
+    for person in friends:
+        print(person)
+
+    # friends.add_people([])

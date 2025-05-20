@@ -34,4 +34,5 @@ def find_positive_nums_count() -> None:
     print(f"Количество положительных чисел: {count}")
 
 
-find_positive_nums_count()
+if __name__ == "__main__":
+    find_positive_nums_count()

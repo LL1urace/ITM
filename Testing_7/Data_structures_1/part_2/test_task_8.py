@@ -1,8 +1,6 @@
 import pytest
-import sys
 from faker import Faker
-sys.path.append(r"E:\Учёба\Для проектиков по IT\ITM\Data_structures_1\part_2")
-from task_8 import reverse_two_digits_number
+from Data_structures_1.part_2.task_8 import reverse_two_digits_number
 
 
 faker: Faker = Faker()

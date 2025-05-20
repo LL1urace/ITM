@@ -41,4 +41,5 @@ def calculator() -> None:
 
 
 
-calculator()
+if __name__ == "__main__":
+    calculator()

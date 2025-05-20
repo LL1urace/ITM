@@ -1,3 +1,7 @@
+# Практика
+
+# 4. Прочитайте статью про логгирование https://habr.com/ru/companies/wunderfund/articles/683880/
+
 import logging
 
 logging.basicConfig(level=logging.INFO, filename="task-4_py_log.log",filemode="w",

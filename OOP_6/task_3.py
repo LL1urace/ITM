@@ -20,7 +20,7 @@ class MeansOfTransport:
         print(f"Марка ТС: {self.brand}")
 
 
-
-car = MeansOfTransport("Ferrari", "Red")
-car.show_brand()
-car.show_color()
+if __name__ == "__main__":
+    car = MeansOfTransport("Ferrari", "Red")
+    car.show_brand()
+    car.show_color()

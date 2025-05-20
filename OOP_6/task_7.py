@@ -19,10 +19,12 @@ class Car(MeansOfTransport):
 
 
 
-car = Car("Maserati", "White", 4, 2025, "gasoline")
 
-car_year = car._year # Предупреждение, что так лучше не делать
-print(car_year)
+if __name__ == "__main__":
+    car = Car("Maserati", "White", 4, 2025, "gasoline")
 
-car__fuel_type = car.__fuel_type # Ошибка, так как Python использует name mangling на _Car__fuel_type
-print(car__fuel_type)
+    car_year = car._year # Предупреждение, что так лучше не делать
+    print(car_year)
+
+    car__fuel_type = car.__fuel_type # Ошибка, так как Python использует name mangling на _Car__fuel_type
+    print(car__fuel_type)

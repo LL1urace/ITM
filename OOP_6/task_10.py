@@ -19,9 +19,11 @@ class StrCalculator(Calculator):
         return str1 + str2
 
 
-# Пример использования:
-calc = Calculator()
-print(calc.addition(5, 3))  # 8
 
-str_calc = StrCalculator()
-print(str_calc.addition("Hello, ", "world!"))  # "Hello, world!"
+# Пример использования:
+if __name__ == "__main__":
+    calc = Calculator()
+    print(calc.addition(5, 3))  # 8
+
+    str_calc = StrCalculator()
+    print(str_calc.addition("Hello, ", "world!"))  # "Hello, world!"

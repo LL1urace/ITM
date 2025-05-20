@@ -79,12 +79,15 @@ class StudentITM:
                 f"Статус обучения: {self.__education_status}\n")
 
 
-studentITM_1 = StudentITM("Структуры данных", 1/50, True)
 
-studentITM_1.current_topic = "ООП"
-studentITM_1.learning_progress = 6/50
-studentITM_1.education_status = False
 
-print(studentITM_1)
+if __name__ == "__main__":
+    studentITM_1 = StudentITM("Структуры данных", 1/50, True)
 
-studentITM_2 = StudentITM("Структуры данных")
+    studentITM_1.current_topic = "ООП"
+    studentITM_1.learning_progress = 6/50
+    studentITM_1.education_status = False
+
+    print(studentITM_1)
+
+    studentITM_2 = StudentITM("Структуры данных")

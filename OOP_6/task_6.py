@@ -24,8 +24,8 @@ class Moped(MeansOfTransport):
 
 
 
-
-moped = Moped("ALPHA RX 11", "Red", 2)
-moped.show_wheel_count()
-moped_time = moped.calc_time(100, 10)
-print(f"Время за которое мопед проедет {moped_time}:" )
+if __name__ == "__main__":
+    moped = Moped("ALPHA RX 11", "Red", 2)
+    moped.show_wheel_count()
+    moped_time = moped.calc_time(100, 10)
+    print(f"Время за которое мопед проедет {moped_time}:" )

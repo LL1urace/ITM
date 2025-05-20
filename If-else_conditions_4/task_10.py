@@ -47,5 +47,5 @@ def num_description() -> None:
 
 
 
-
-num_description()
+if __name__ == "__main__":
+    num_description()

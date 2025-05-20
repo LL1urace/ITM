@@ -33,4 +33,6 @@ def average_nums_of_list() -> None:
 
     print("Завершение работы программы...")
 
-average_nums_of_list()
+
+if __name__ == "__main__":
+    average_nums_of_list()

@@ -39,4 +39,5 @@ def get_point_quadrant() -> None:
 
 
 
-get_point_quadrant()
+if __name__ == "__main__":
+    get_point_quadrant()

@@ -10,4 +10,5 @@ def output_sum_squares_ten_range() -> None:
 
 
 
-output_sum_squares_ten_range()
+if __name__ == "__main__":
+    output_sum_squares_ten_range()

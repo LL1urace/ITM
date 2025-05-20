@@ -1,8 +1,6 @@
 import pytest
-import sys
 from faker import Faker
-sys.path.append(r"E:\Учёба\Для проектиков по IT\ITM\Data_structures_1\part_1")
-from task_7 import get_circle_length_area
+from Data_structures_1.part_1.task_7 import get_circle_length_area
 from math import pi
 
 

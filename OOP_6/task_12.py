@@ -17,11 +17,14 @@
 #         Parent.__init__(self)
 #         self.child_attribute = "I am a child"
 #
-# child = Child()
-#
-# print(child.child_attribute)
-# print(child.parent_attribute)
-# child.parent_method()
+
+
+# if __name__ == "__main__":
+    # child = Child()
+    #
+    # print(child.child_attribute)
+    # print(child.parent_attribute)
+    # child.parent_method()
 
 
 
@@ -39,11 +42,14 @@
 #         super().__init__()
 #         self.child_attribute = "I am a child"
 #
-# child = Child()
-#
-# print(child.child_attribute)
-# print(child.parent_attribute)
-# child.parent_method()
+
+
+# if __name__ == "__main__":
+    # child = Child()
+    #
+    # print(child.child_attribute)
+    # print(child.parent_attribute)
+    # child.parent_method()
 
 
 
@@ -84,10 +90,13 @@
 # class D(B, C):
 #     pass
 #
-#
-# d = D()
-# d.x()
-# print(D.mro()) # multiple-resolution order
+
+
+
+# if __name__ == "__main__":
+    # d = D()
+    # d.x()
+    # print(D.mro()) # multiple-resolution order
 
 
 
@@ -126,12 +135,13 @@ class TextDescriber(WordCounter, Vocabulary):
         print("End init TextDescriber.__init__()")
 
 
-td = TextDescriber("row row row your boat")
-print("--------")
-print(td.tokens)
-print(td.vocab)
-print(td.word_count)
-print(TextDescriber.__mro__) # Смотрим порядок вызовов
+if __name__ == "__main__":
+    td = TextDescriber("row row row your boat")
+    print("--------")
+    print(td.tokens)
+    print(td.vocab)
+    print(td.word_count)
+    print(TextDescriber.__mro__) # Смотрим порядок вызовов
 
 # super() не обращается напрямую к родителю, а ищет следующий класс в цепочке MRO (Method Resolution Order).
 # Благодаря этому каждый метод вызывается только один раз, даже если он есть в нескольких ветках.

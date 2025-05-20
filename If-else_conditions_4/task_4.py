@@ -31,4 +31,7 @@ def min_num() -> None:
 
     print(f"Наименьшее из трех чисел: {min_val}")
 
-min_num()
+
+
+if __name__ == "__main__":
+    min_num()

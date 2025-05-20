@@ -28,4 +28,6 @@ def print_maxmin_nums() -> None:
         print(f"Чиcла {first_num} и {second_num} равны")
 
 
-print_maxmin_nums()
+
+if __name__ == "__main__":
+    print_maxmin_nums()

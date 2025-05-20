@@ -33,4 +33,6 @@ def define_score() -> None:
             print("Ошибка-ввода: K не находится в диапазоне 1-5")
 
 
-define_score()
+
+if __name__ == "__main__":
+    define_score()

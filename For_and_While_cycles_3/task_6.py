@@ -12,5 +12,5 @@ def output_list_dict() -> None:
         print("DICT:", key, value)
 
 
-
-output_list_dict()
+if __name__ == "__main__":
+    output_list_dict()

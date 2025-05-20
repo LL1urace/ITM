@@ -7,8 +7,8 @@ def binary_search(arr, target):
     low = 0  # Устанавливаем начальный индекс (левая граница поиска)
     high = len(arr) - 1  # Устанавливаем конечный индекс (правая граница поиска)
 
-    while low < high:  # Пока границы не пересеклись (есть, что искать)
-        mid = low + high // 2 # Находим середину списка
+    while low <= high:  # Пока границы не пересеклись (есть, что искать)
+        mid = (low + high) // 2 # Находим середину списка
         guess = arr[mid]  # Получаем значение в середине списка
 
         if guess == target:
@@ -20,9 +20,12 @@ def binary_search(arr, target):
 
     return -1  # Если не нашли значение — возвращаем -1
 
-my_list = [1, 3, 5, 7, 9, 11, 13]
-print(binary_search(my_list, 7))  # Выведет: 3
-print(binary_search(my_list, 4))  # Выведет: -1 (так как 4 нет в списке)
+
+
+if __name__ == "__main__":
+    my_list = [1, 3, 5, 7, 9, 11, 13]
+    print(binary_search(my_list, 7))  # Выведет: 3
+    print(binary_search([1, 3, 5, 7, 9, 11, 13], 13))  # Выведет: -1 (так как 4 нет в списке)
 
 
 

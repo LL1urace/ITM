@@ -1,8 +1,6 @@
 import pytest
-import sys
 from faker import Faker
-sys.path.append(r"E:\Учёба\Для проектиков по IT\ITM\Data_structures_1\part_2")
-from task_4 import count_segments_in_length
+from Data_structures_1.part_2.task_4 import count_segments_in_length
 
 
 faker: Faker = Faker()
@@ -15,7 +13,7 @@ def valid_segment_inputs():
     return a, b
 
 
-def test_get_full_kilobytes_size_valid_input(valid_segment_inputs):
+def test_count_segments_in_length_valid_input(valid_segment_inputs):
     a, b = valid_segment_inputs
     count_segments = count_segments_in_length(a, b)
     assert count_segments == a // b
@@ -39,7 +37,7 @@ def invalid_segment_inputs(request):
 
 
 # Тест на случайные неправильные значения
-def test_get_full_kilobytes_size_invalid_input(invalid_segment_inputs):
+def test_count_segments_in_length_invalid_input(invalid_segment_inputs):
     a, b = invalid_segment_inputs
     with pytest.raises((TypeError, ValueError)):
         count_segments_in_length(a, b)

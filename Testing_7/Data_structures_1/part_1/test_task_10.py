@@ -1,9 +1,10 @@
 import pytest
-import sys
 from faker import Faker
-sys.path.append(r"E:\Учёба\Для проектиков по IT\ITM\Data_structures_1\part_1")
-from task_10 import (get_squares_operations, calc_sum_sq,
-                     calc_difference_sq, calc_product_sq, calc_quotient_sq)
+from Data_structures_1.part_1.task_10 import (get_squares_operations,
+                                              calc_sum_sq,
+                                              calc_difference_sq,
+                                              calc_product_sq,
+                                              calc_quotient_sq)
 
 
 faker: Faker = Faker()

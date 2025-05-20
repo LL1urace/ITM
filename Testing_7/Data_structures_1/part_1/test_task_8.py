@@ -1,8 +1,6 @@
 import pytest
-import sys
 from faker import Faker
-sys.path.append(r"E:\Учёба\Для проектиков по IT\ITM\Data_structures_1\part_1")
-from task_8 import get_avg_two_nums
+from Data_structures_1.part_1.task_8 import get_avg_two_nums
 
 
 faker: Faker = Faker()

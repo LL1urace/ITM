@@ -17,4 +17,5 @@ def find_simple_nums_range2_50() -> None:
 
 
 
-find_simple_nums_range2_50()
+if __name__ == "__main__":
+    find_simple_nums_range2_50()

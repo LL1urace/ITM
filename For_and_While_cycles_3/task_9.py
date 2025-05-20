@@ -8,4 +8,5 @@ def output_multiplication2table() -> None:
 
 
 
-output_multiplication2table()
+if __name__ == "__main__":
+    output_multiplication2table()

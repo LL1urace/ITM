@@ -27,7 +27,8 @@ class Moped(MeansOfTransport):
 
 
 
-car = Car("Maserati", "White", 4)
-moped = Moped("ALPHA RX 11", "Red", 2)
-car.show_wheel_count()
-moped.show_wheel_count()
+if __name__ == "__main__":
+    car = Car("Maserati", "White", 4)
+    moped = Moped("ALPHA RX 11", "Red", 2)
+    car.show_wheel_count()
+    moped.show_wheel_count()

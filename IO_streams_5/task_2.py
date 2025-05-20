@@ -7,4 +7,6 @@ def file_read():
     file.close()
 
 
-file_read()
+
+if __name__ == "__main__":
+    file_read()

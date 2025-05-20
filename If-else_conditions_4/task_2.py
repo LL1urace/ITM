@@ -28,4 +28,6 @@ def max_num() -> None:
         print(f"Чиcла {first_num} и {second_num} равны")
 
 
-max_num()
+
+if __name__ == "__main__":
+    max_num()

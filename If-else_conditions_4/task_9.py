@@ -73,4 +73,7 @@ def get_new_direction() -> None:
                 print("Ошибка: неподдерживаемая комбинация команды и направления\n")
                 break
 
-get_new_direction()
+
+
+if __name__ == "__main__":
+    get_new_direction()

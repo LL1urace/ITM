@@ -11,5 +11,5 @@ def find_factorial() -> None:
 
 
 
-
-find_factorial()
+if __name__ == "__main__":
+    find_factorial()

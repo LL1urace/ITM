@@ -24,5 +24,6 @@ class Cat(Animals):
 
 
 
-cat = Cat()
-cat.voice()
+if __name__ == "__main__":
+    cat = Cat()
+    cat.voice()

@@ -16,5 +16,5 @@ def output_multiplication_table() -> None:
         print()
 
 
-
-output_multiplication_table()
+if __name__ == "__main__":
+    output_multiplication_table()

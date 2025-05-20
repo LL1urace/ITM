@@ -14,4 +14,6 @@ def sum_column_from_csv():
     print(column_sum)
 
 
-sum_column_from_csv()
+
+if __name__ == "__main__":
+    sum_column_from_csv()

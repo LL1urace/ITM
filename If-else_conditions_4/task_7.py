@@ -49,4 +49,5 @@ def get_days_in_month() -> None:
 
 
 
-get_days_in_month()
+if __name__ == "__main__":
+    get_days_in_month()

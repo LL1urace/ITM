@@ -43,4 +43,6 @@ def next_date() -> None:
 
 
 
-next_date()
+
+if __name__ == "__main__":
+    next_date()

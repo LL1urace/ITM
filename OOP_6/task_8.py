@@ -19,5 +19,8 @@ class Car(MeansOfTransport):
     def show_wheel_count(self):
         print(f"Количество колёс автомобиля: {self.wheel_count}")
 
-car = Car("Maserati", "White", 4)
-Car.show_car_drive()
+
+
+if __name__ == "__main__":
+    car = Car("Maserati", "White", 4)
+    Car.show_car_drive()

@@ -8,5 +8,5 @@ def output_range() -> None:
         print(digit)
 
 
-
-output_range()
+if __name__ == "__main__":
+    output_range()
