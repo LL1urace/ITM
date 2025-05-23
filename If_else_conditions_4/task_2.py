@@ -8,26 +8,25 @@
 
 # If Else
 # 2. Даны два числа. Вывести большее из них.
-def max_num() -> None:
-    """Поиск большего из двух чисел"""
-    print("Поиск большего из двух чисел:")
-    first_num = input("Введите первое число: ")
-    second_num = input("Введите второе число: ")
-    try:
-        first_num = int(first_num)
-        second_num = int(second_num)
-    except ValueError:
-        print("Ошибка-ввода: Не все значения являются целыми числами")
-        return
+from typing import Union, Optional
 
-    if first_num > second_num:
-        print(f"Большее из двух чисел: {first_num}")
-    elif first_num < second_num:
-        print(f"Большее из двух чисел: {second_num}")
+
+def max_num(fn: Union[int, float], sn: Union[int, float]) -> Optional[int]:
+    """Поиск большего из двух чисел"""
+    try:
+        fn = int(fn)
+        sn = int(sn)
+    except ValueError:
+        raise ValueError("Не все значения являются целыми числами!")
+
+    if fn > sn:
+        return fn
+    elif fn < sn:
+        return sn
     else:
-        print(f"Чиcла {first_num} и {second_num} равны")
+        return None
 
 
 
 if __name__ == "__main__":
-    max_num()
+    print(max_num(1, 2))

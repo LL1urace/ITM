@@ -49,67 +49,67 @@
         (+) task_2
 
 
-(-) 2_Exceptions,_logging
+(+) 2_Exceptions,_logging
     (+) task_2
     (+) task_4
-    (-) task_5
+    (+) task_5
     (+) task_6
     (+) task_7
-    (-) task_8
+    (+) task_8
 
 
-(-) 3_For_and_While_cycles
-    (-) task_3
-    (-) task_4
-    (-) task_5
-    (-) task_6
-    (-) task_7
-    (-) task_8
-    (-) task_9
-    (-) task_10
-    (-) task_11
-    (-) task_12
-    (-) task_13
+(+) 3_For_and_While_cycles
+    (+) task_3
+    (+) task_4
+    (+) task_5
+    (+) task_6
+    (+) task_7
+    (+) task_8
+    (+) task_9
+    (+) task_10
+    (+) task_11
+    (+) task_12
+    (+) task_13
 
 
-(-) 4_If-else_conditions
-    (-) task_1
-    (-) task_2
-    (-) task_3
-    (-) task_4
-    (-) task_5
-    (-) task_6
-    (-) task_7
-    (-) task_8
-    (-) task_9
-    (-) task_10
-    (-) task_11
+(+) 4_If_else_conditions
+    (+) task_1
+    (+) task_2
+    (+) task_3
+    (+) task_4
+    (+) task_5
+    (+) task_6
+    (+) task_7
+    (+) task_8
+    (+) task_9
+    (+) task_10
+    (+) task_11
 
 
 (-) 5_IO_streams
-    (-) task_2
-    (-) task_3
-    (-) task_4
-    (-) task_5
-    (-) task_6
-    (-) task_7
-    (-) tasks_8
-        (-) part_3
-        (-) part_4
-        (-) part_5
-        (-) part_6
+    (+) task_2
+    (+) task_3
+    (+) task_4
+    (+) task_5
+    (+) task_6
+    (+) task_7
+    (-) tasks_8 // Не сделал
+        (-) part_3 // Не сделал
+        (-) part_4 // Не сделал
+        (-) part_5 // Не сделал
+        (-) part_6 // Не сделал
 
 
 (-) 6_OOP
-    (-) extra_task
-        (-) extra_1
-        (-) extra_2
-        (-) extra_3
-        (-) extra_4
-        (-) extra_5
-        (-) extra_6
-        (-) extra_7
-    (-) task_3
+    (-) extra_task // Не сделал
+        (-) extra_1 // Не сделал
+        (-) extra_2 // Не сделал
+        (-) extra_3 // Не сделал
+        (-) extra_4 // Не сделал
+        (-) extra_5 // Не сделал
+        (-) extra_6 // Не сделал
+        (-) extra_7 // Не сделал
+    (+) task_3
     (-) task_4
     (-) task_5
     (-) task_6
@@ -124,3 +124,5 @@
     (-) task_13
     (-) task_14
     (-) task_15
+
+(-) Отчет о покрытии тестами через pycov

@@ -1,5 +1,18 @@
 import pytest
-from Data_structures_1.part_6.task_1 import binary_search
+from OOP_6.task_12 import (Parent,
+                           ChildUsingParentInit,
+                           ChildUsingSuper,
+                           B,
+                           C,
+                           D,
+                           BX,
+                           CX,
+                           DX,
+                           Tokenizer,
+                           WordCounter,
+                           Vocabulary,
+                           TextDescriber,
+                           get_text_describer_data)
 
 
 

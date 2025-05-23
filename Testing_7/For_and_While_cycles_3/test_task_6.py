@@ -1,22 +1,21 @@
 import pytest
-from Data_structures_1.part_6.task_1 import binary_search
+from For_and_While_cycles_3.task_6 import output_list_dict
 
 
 
-@pytest.mark.parametrize(
-    "arr, target, expected",
-    [
-        ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-        ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-        ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-        ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-        ([], 10, -1),                            # Пустой список
-        ([10], 10, 0),                           # Один элемент — совпадает
-        ([10], 5, -1),                           # Один элемент — не совпадает
-        ([2, 4], 2, 0),                          # Два элемента — начало
-        ([2, 4], 4, 1),                          # Два элемента — конец
-        ([2, 4], 3, -1),                         # Два элемента — между ними
+def test_output_list_dict():
+    l_out, d_out = output_list_dict()
+    assert l_out == [
+        "LIST: item1",
+        "LIST: item2",
+        "LIST: item3",
+        "LIST: item4",
+        "LIST: item5",
     ]
-)
-def test_binary_search(arr, target, expected):
-    assert binary_search(arr, target) == expected
+    assert d_out == [
+        "DICT: 1 item1",
+        "DICT: 2 item2",
+        "DICT: 3 item3",
+        "DICT: 4 item4",
+        "DICT: 5 item5",
+    ]

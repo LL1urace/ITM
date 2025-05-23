@@ -10,36 +10,30 @@
 # 6. *** Реализуйте программу калькулятор. На вход подается три значения:
 # первое число, второе число и операция (*, /, + или -).
 # На выходе должны получить число, после выполнения операции.
-def calculator() -> None:
+def calculator(f_num: str, s_num: str, operation: str) -> str | None:
     """Производит операции (*, /, + или -) на двух числах"""
-    print("Калькулятор для двух чисел: ")
-    f_num = input("Введите 1-ое число: ")
-    s_num = input("Введите 2-ое число: ")
-    operation = input("Введите операцию (*, /, + или -): ")
     try:
         f_num = float(f_num)
         s_num = float(s_num)
-        if not (operation in ["*", "/", "+", "-"] and len(operation) == 1):
-            print("Ошибка-ввода: некорректные данные операции")
-            return
+        if operation not in ["*", "/", "+", "-"] or len(operation) != 1:
+            return "Ошибка-ввода: некорректные данные операции"
     except ValueError:
-        print("Ошибка-ввода: некорректные данные числовых значений")
-        return
+        return "Ошибка-ввода: некорректные данные числовых значений"
+
     match operation:
         case "*":
-            print(f"Результат операции: {f_num * s_num}")
+            return f"Результат операции: {f_num * s_num}"
         case "/":
             try:
-                print(f"Результат операции: {f_num / s_num}")
+                return f"Результат операции: {f_num / s_num}"
             except ZeroDivisionError:
-                print("Ошибка-операции: ошибка деления на ноль")
-                return
+                return "Ошибка-операции: ошибка деления на ноль"
         case "+":
-            print(f"Результат операции: {f_num + s_num}")
+            return f"Результат операции: {f_num + s_num}"
         case "-":
-            print(f"Результат операции: {f_num - s_num}")
-
+            return f"Результат операции: {f_num - s_num}"
+    return None
 
 
 if __name__ == "__main__":
-    calculator()
+    print(calculator("1", "2", "*"))

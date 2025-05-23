@@ -8,13 +8,19 @@
 # …..
 # 9*1 = 9
 # 9*2=18
-def output_multiplication_table() -> None:
-    """Выводит таблицу умножения от 0 до 9 с множителями от 1 до 10."""
-    for multiplicand  in range(0, 10):
-        for multiplier  in range(1, 11):
-            print(f"{multiplicand} * {multiplier} = {multiplicand * multiplier}")
-        print()
+from typing import List
+
+def output_multiplication_table() -> List[str]:
+    """Возвращает таблицу умножения от 0 до 9 с множителями от 1 до 10 в виде списка строк."""
+    result = []
+    for multiplicand in range(0, 10):
+        for multiplier in range(1, 11):
+            result.append(f"{multiplicand} * {multiplier} = {multiplicand * multiplier}")
+        result.append(" ")  # пустая строка для разделения блоков
+    return result
 
 
 if __name__ == "__main__":
-    output_multiplication_table()
+    result = output_multiplication_table()
+    for row in result:
+        print(row)

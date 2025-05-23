@@ -4,35 +4,31 @@
 # Ввод пользователя должен осуществляться с помощью input.
 # Если пользователь вводит ноль, то выводиться на экран среднее значение.
 # Используйте цикл while для решения данной задачи
-def average_nums_of_list() -> None:
+from typing import List, Union, Optional
+
+
+def average_nums_of_list(nums: List[Union[float, int]]) -> Optional[float]:
     """Вычисление среднего значения списка чисел"""
-    print("Расчет среднего значения списка чисел (введите 0, чтобы завершить список)")
-    nums_list = list()
-    while True:
-        num = input("Введите следующее число списка: ")
-
-        try:
-            num = float(num)
-        except ValueError:
-            print("Ошибка-ввода: введено некорректное значение для числа.")
-            continue
-        except Exception as e:
-            print("Ошибка: что-то пошло не так.", e)
-            continue
-
-        if num == 0:
-            if nums_list:
-                average = sum(nums_list)/len(nums_list)
-                print(f"\nБыл введен список: {nums_list}")
-                print(f"Среднее значение чисел списка: {average}")
-            else:
-                print("Список пуст, нельзя посчитать среднее значение.")
+    processed_nums = []
+    for n in nums:
+        # Преобразуем к float, если нужно
+        if isinstance(n, (int, float)):
+            val = float(n)
+        elif isinstance(n, str):
+            try:
+                val = float(n)
+            except ValueError:
+                raise ValueError(f"Невозможно преобразовать значение '{n}' в число")
+        else:
+            raise TypeError(f"Некорректное значение в списке: {n} (тип {type(n)})")
+        # Если встретился ноль — прерываем цикл
+        if val == 0:
             break
-
-        nums_list.append(num)
-
-    print("Завершение работы программы...")
+        processed_nums.append(val)
+    if not processed_nums:
+        return None
+    return sum(processed_nums) / len(processed_nums)
 
 
 if __name__ == "__main__":
-    average_nums_of_list()
+    print(average_nums_of_list([1, 2, 3, 0]))

@@ -1,22 +1,12 @@
 import pytest
-from Data_structures_1.part_6.task_1 import binary_search
+from For_and_While_cycles_3.task_12 import output_func
 
 
 
-@pytest.mark.parametrize(
-    "arr, target, expected",
-    [
-        ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-        ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-        ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-        ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-        ([], 10, -1),                            # Пустой список
-        ([10], 10, 0),                           # Один элемент — совпадает
-        ([10], 5, -1),                           # Один элемент — не совпадает
-        ([2, 4], 2, 0),                          # Два элемента — начало
-        ([2, 4], 4, 1),                          # Два элемента — конец
-        ([2, 4], 3, -1),                         # Два элемента — между ними
-    ]
-)
-def test_binary_search(arr, target, expected):
-    assert binary_search(arr, target) == expected
+def test_output_func():
+    vals = output_func()
+    assert vals[0] == "Значение функции y=x^2 при x = 1 равно: 1"
+    assert vals[-1] == "Значение функции y=x^2 при x = 10.0 равно: 100.0"
+    assert vals[7] == "Значение функции y=x^2 при x = 4.5 равно: 20.25"
+    assert vals[3] == "Значение функции y=x^2 при x = 2.5 равно: 6.25"
+    assert vals[-4] == "Значение функции y=x^2 при x = 8.5 равно: 72.25"

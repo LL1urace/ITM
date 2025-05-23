@@ -5,7 +5,6 @@ import copy
 from typing import Union
 
 class Car:
-
     def __init__(self, make: str, model: str, year: int,
                  color: str, fuel_type: str, tank_capacity: float,
                  current_fuel_level: float, number_of_doors: int,

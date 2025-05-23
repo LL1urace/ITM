@@ -1,22 +1,20 @@
 import pytest
-from Data_structures_1.part_6.task_1 import binary_search
+from IO_streams_5.task_7 import sum_column_from_csv
 
 
 
-@pytest.mark.parametrize(
-    "arr, target, expected",
-    [
-        ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-        ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-        ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-        ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-        ([], 10, -1),                            # Пустой список
-        ([10], 10, 0),                           # Один элемент — совпадает
-        ([10], 5, -1),                           # Один элемент — не совпадает
-        ([2, 4], 2, 0),                          # Два элемента — начало
-        ([2, 4], 4, 1),                          # Два элемента — конец
-        ([2, 4], 3, -1),                         # Два элемента — между ними
-    ]
-)
-def test_binary_search(arr, target, expected):
-    assert binary_search(arr, target) == expected
+def test_sum_column_from_csv(tmp_path):
+    # Создаём временный CSV-файл с тестовыми данными
+    csv_content = """Rachel1,Rachel2
+10,100
+20,200
+30,300
+"""
+    test_csv = tmp_path / "test_bikes.csv"
+    test_csv.write_text(csv_content, encoding="utf-8")
+
+    # Вызываем функцию с тестовым файлом
+    result = sum_column_from_csv(file_path=test_csv, column_name='Rachel1')
+
+    # Проверяем, что сумма посчитана правильно: 10+20+30 = 60
+    assert result == 60

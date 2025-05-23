@@ -10,34 +10,30 @@
 # 5. Даны координаты точки, не лежащей на координатных осях OX и OY.
 # Определить номер координатной четверти, в которой находится данная точка.
 # Координаты задаются пользователем, например (10, 15).
-def get_point_quadrant() -> None:
-    """Определение номера координатной четверти в которой находится точка"""
-    print("Определение номера координатной четверти в которой находится точка:")
-    x = input("Введите координаты точки: x = ")
-    y = input("Введите координаты точки: y = ")
-    try:
-        x = int(x)
-        y = int(y)
-    except ValueError:
-        print("Ошибка-ввода: Не все значения являются целыми числами")
-        return
+from typing import List
 
+def get_point_quadrant(coords: List[int|float]) -> int:
+    """Возвращает номер координатной четверти в которой находится точка."""
+    try:
+        x = float(coords[0])
+        y = float(coords[1])
+    except ValueError:
+        raise ValueError("Не все значения являются целыми числами")
     # Проверка на оси
     if x == 0 or y == 0:
-        print("Точка лежит на осях OX или OY.")
-        return
-
+        raise ValueError("Точка лежит на осях OX или OY.")
     # Определение четверти
     if x > 0 and y > 0:
-        print("Точка находится в 1-й четверти.")
-    elif x < 0 and y > 0:
-        print("Точка находится во 2-й четверти.")
+        return 1
+    elif x < 0 < y:
+        return 2
     elif x < 0 and y < 0:
-        print("Точка находится в 3-й четверти.")
-    elif x > 0 and y < 0:
-        print("Точка находится в 4-й четверти.")
-
+        return 3
+    elif x > 0 > y:
+        return 4
+    else:
+        raise ValueError("Не удалось найти номер четверти.")
 
 
 if __name__ == "__main__":
-    get_point_quadrant()
+    print(get_point_quadrant([0, 0]))

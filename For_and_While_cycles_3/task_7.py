@@ -1,11 +1,16 @@
 # Практика:
 
 # 7. Вывести все числа от 1 до 100, которые делятся на 3 без остатка.
-def output_range() -> None:
-    """Выводит числа от 1 до 100 которые делятся на 3 без остатка."""
+from typing import List
+
+def output_range() -> List[int]:
+    """Возвращает числа от 1 до 100 которые делятся на 3 без остатка."""
+    digits_range = []
     for num in range(3, 101, 3):
-        print(num)
+        digits_range.append(num)
+    return digits_range
 
 
 if __name__ == "__main__":
-    output_range()
+    digits = output_range()
+    print(digits)

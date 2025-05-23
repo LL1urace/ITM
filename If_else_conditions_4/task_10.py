@@ -9,15 +9,17 @@
 # Switch Case
 # 5. Дано целое число в диапазоне 100–999. Вывести строку-описание данного числа,
 # например: 256 — «двести пятьдесят шесть», 814 — «восемьсот четырнадцать».
-def num_description() -> None:
-    """Вывод строки-описания для трехзначного числа"""
-    print("Вывод строки-описания для трехзначного числа: ")
-    num = input("Введите трехзначное число (100-999): ")
+def num_description(num: int) -> str:
+    """Возвращает строку-описание для трехзначного числа"""
     try:
         num = int(num)
+    except TypeError:
+        raise TypeError("Ошибка-ввода: значение невозможно преобразовать в целое число")
     except ValueError:
-        print("Ошибка-ввода: некорректные данные числовых значений")
-        return
+        raise ValueError("Ошибка-ввода: значение должно быть целым целым")
+
+    if not (100 <= num <= 999):
+        return "Ошибка-ввода: число должно быть в диапазоне 100-999"
 
     hundreds_dict = {1: "сто", 2: "двести", 3: "триста", 4: "четыреста", 5: "пятьсот",
                 6: "шестьсот", 7: "семьсот", 8:"восемьсот", 9: "девятьсот"}
@@ -29,23 +31,22 @@ def num_description() -> None:
             6: "шесть", 7: "семь", 8: "восемь", 9: "девять"}
 
     hundreds = num // 100
-    teens = (num % 100)
+    teens = num % 100
     tens = teens // 10
     ones = teens % 10
 
-    match teens, tens, ones:
-        case (teens, _, _) if teens in teens_dict:
-            print(f"Введенное число: {hundreds_dict[hundreds]} {teens_dict[teens]}")
-        case (_, 0, 0):
-            print(f"Введенное число: {hundreds_dict[hundreds]}")
-        case (_, tens, 0):
-            print(f"Введенное число: {hundreds_dict[hundreds]} {tens_dict[tens]}")
-        case (_, 0, ones):
-            print(f"Введенное число: {hundreds_dict[hundreds]} {ones_dict[ones]}")
-        case (_, tens, ones):
-            print(f"Введенное число: {hundreds_dict[hundreds]} {tens_dict[tens]} {ones_dict[ones]}")
+    if teens in teens_dict:
+        return f"Введенное число: {hundreds_dict[hundreds]} {teens_dict[teens]}"
+    elif tens == 0 and ones == 0:
+        return f"Введенное число: {hundreds_dict[hundreds]}"
+    elif ones == 0:
+        return f"Введенное число: {hundreds_dict[hundreds]} {tens_dict[tens]}"
+    elif tens == 0:
+        return f"Введенное число: {hundreds_dict[hundreds]} {ones_dict[ones]}"
+    else:
+        return f"Введенное число: {hundreds_dict[hundreds]} {tens_dict[tens]} {ones_dict[ones]}"
 
 
 
 if __name__ == "__main__":
-    num_description()
+    print(num_description(132))

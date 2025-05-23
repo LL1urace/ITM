@@ -1,5 +1,6 @@
 import pytest
-from Data_structures_1.part_6.task_1 import binary_search
+from OOP_6.task_4 import MeansOfTransport
+from OOP_6.task_7 import Car
 
 
 

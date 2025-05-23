@@ -17,19 +17,19 @@ class ExceptionPrintSendData(ExceptionPrint):
 class PrintData:
     def print(self, data):
         self.send_data(data)
-        print(f"печать {str(data)}")
+        return f"печать {str(data)}"
 
     def send_data(self, data):
         if not self.send_to_print(data):
             raise ExceptionPrintSendData("Принтер не отвечает")
 
     def send_to_print(self, data):
-        return False
+        return True
 
 if __name__ == "__main__":
     p = PrintData()
     try:
-        p.print("123")
+        p.print("Тест")
     except ExceptionPrintSendData:
         print("Принтер не отвечает")
     except ExceptionPrint:

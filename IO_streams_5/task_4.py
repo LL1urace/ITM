@@ -2,44 +2,66 @@
 
 # 4. Запишите любую информацию в файл с разными значениями mode для записи.
 # Какую разницу при записи файла вы заметили?
-
-# 1) mode r (Ошибка если файл не существует/Ошибка, неподдерживаемая операция)
-# if __name__ == "__main__":
-    # file_r = open("files/task_4/file_r.txt", 'r', encoding="utf-8") # r
-    # file_r.write("Файл r")
-    # file_r.close()
+import os
 
 
-# 2) mode r+ (Ошибка если файл не существует/Запись в начало файла/Перезапись поверх существующего)
-# if __name__ == "__main__":
-    # file_rplus = open("files/task_4/file_rplus.txt", 'r+', encoding="utf-8") # r+
-    # file_rplus.write("Файл rplus")
-    # file_rplus.close()
 
+def file_write_modes_testing(base_dir="files/task_4"):
+    os.makedirs(base_dir, exist_ok=True)
 
-# 3) mode w (Запись в начало файла/Перезапись файла полностью)
-# if __name__ == "__main__":
-    # file_w = open("files/task_4/file_w.txt", 'w', encoding="utf-8") # w
-    # file_w.write("Файл w")
-    # file_w.close()
+    results = {}
+    # 1) mode 'r'
+    try:
+        with open(os.path.join(base_dir, "file_r.txt"), 'r', encoding="utf-8") as f:
+            f.write("Файл r")
+        results["r"] = "OK"
+    except Exception as e:
+        results["r"] = f"Ошибка: {e}"
 
+    # 2) mode 'r+'
+    try:
+        with open(os.path.join(base_dir, "file_rplus.txt"), 'r+', encoding="utf-8") as f:
+            f.write("Файл rplus")
+        results["r+"] = "OK"
+    except Exception as e:
+        results["r+"] = f"Ошибка: {e}"
 
-# 4) mode w+ (Запись в начало файла/Перезапись файла полностью)
-# if __name__ == "__main__":
-    # file_wplus = open("files/task_4/file_wplus.txt", 'w+', encoding="utf-8") # w+
-    # file_wplus.write("Файл wplus")
-    # file_wplus.close()
+    # 3) mode 'w'
+    try:
+        with open(os.path.join(base_dir, "file_w.txt"), 'w', encoding="utf-8") as f:
+            f.write("Файл w")
+        results["w"] = "OK"
+    except Exception as e:
+        results["w"] = f"Ошибка: {e}"
 
+    # 4) mode 'w+'
+    try:
+        with open(os.path.join(base_dir, "file_wplus.txt"), 'w+', encoding="utf-8") as f:
+            f.write("Файл wplus")
+        results["w+"] = "OK"
+    except Exception as e:
+        results["w+"] = f"Ошибка: {e}"
 
-# 5) mode a (Запись в конец файла/Продолжает запись в файл не стирая содержимое)
-# if __name__ == "__main__":
-    # file_a = open("files/task_4/file_a.txt", 'a', encoding="utf-8") # a
-    # file_a.write("Файл a")
-    # file_a.close()
+    # 5) mode 'a'
+    try:
+        with open(os.path.join(base_dir, "file_a.txt"), 'a', encoding="utf-8") as f:
+            f.write("Файл a")
+        results["a"] = "OK"
+    except Exception as e:
+        results["a"] = f"Ошибка: {e}"
 
+    # 6) mode 'a+'
+    try:
+        with open(os.path.join(base_dir, "file_aplus.txt"), 'a+', encoding="utf-8") as f:
+            f.write("Файл aplus")
+        results["a+"] = "OK"
+    except Exception as e:
+        results["a+"] = f"Ошибка: {e}"
 
-# 6) mode a+ (Запись в конец файла/Продолжает запись в файл не стирая содержимое)
-# if __name__ == "__main__":
-    # file_aplus = open("files/task_4/file_aplus.txt", 'a+', encoding="utf-8") # a+
-    # file_aplus.write("Файл aplus")
-    # file_aplus.close()
+    return results
+
+# Пример вызова:
+if __name__ == "__main__":
+    res = file_write_modes_testing()
+    for mode, status in res.items():
+        print(f"Режим '{mode}': {status}")

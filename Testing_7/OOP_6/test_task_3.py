@@ -1,22 +1,21 @@
 import pytest
-from Data_structures_1.part_6.task_1 import binary_search
+from OOP_6.task_3 import MeansOfTransport
 
 
+@pytest.fixture
+def reset_car():
+    return MeansOfTransport("Макларен", "серобуромалиновый")
 
-@pytest.mark.parametrize(
-    "arr, target, expected",
-    [
-        ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-        ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-        ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-        ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-        ([], 10, -1),                            # Пустой список
-        ([10], 10, 0),                           # Один элемент — совпадает
-        ([10], 5, -1),                           # Один элемент — не совпадает
-        ([2, 4], 2, 0),                          # Два элемента — начало
-        ([2, 4], 4, 1),                          # Два элемента — конец
-        ([2, 4], 3, -1),                         # Два элемента — между ними
-    ]
-)
-def test_binary_search(arr, target, expected):
-    assert binary_search(arr, target) == expected
+
+def test_show_color(reset_car):
+    car = reset_car
+    assert car.show_color() == "Цвет ТС: серобуромалиновый"
+    car.color = "теперь черный"
+    assert car.show_color() == "Цвет ТС: теперь черный"
+
+
+def test_show_brand(reset_car):
+    car = reset_car
+    assert car.show_brand() == "Марка ТС: Макларен"
+    car.brand = "Гелик"
+    assert car.show_brand() == "Марка ТС: Гелик"

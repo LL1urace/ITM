@@ -1,22 +1,37 @@
 import pytest
-from Data_structures_1.part_6.task_1 import binary_search
+from IO_streams_5.task_6 import read_bikes_csv
+import pytest
 
 
 
-@pytest.mark.parametrize(
-    "arr, target, expected",
-    [
-        ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-        ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-        ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-        ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-        ([], 10, -1),                            # Пустой список
-        ([10], 10, 0),                           # Один элемент — совпадает
-        ([10], 5, -1),                           # Один элемент — не совпадает
-        ([2, 4], 2, 0),                          # Два элемента — начало
-        ([2, 4], 4, 1),                          # Два элемента — конец
-        ([2, 4], 3, -1),                         # Два элемента — между ними
-    ]
-)
-def test_binary_search(arr, target, expected):
-    assert binary_search(arr, target) == expected
+@pytest.fixture
+def sample_csv(tmp_path):
+    # Создаем временный csv файл с тестовыми данными
+    csv_path = tmp_path / "bikes.csv"
+    csv_content = """id,model,price
+1,Roadster,1000
+2,Mountain,1500
+3,Hybrid,1200
+4,BMX,800
+"""
+    csv_path.write_text(csv_content, encoding="utf-8")
+    return csv_path
+
+def test_read_all(sample_csv):
+    result = read_bikes_csv(file_path=str(sample_csv), mode="all")
+    # Проверяем, что прочитали все строки, например, возвращается DataFrame или список строк
+    assert len(result) == 4
+
+def test_read_head(sample_csv):
+    result = read_bikes_csv(file_path=str(sample_csv), mode="head")
+    assert len(result) == 10 or len(result) == 4  # если в файле меньше 10 строк
+
+def test_read_nrows(sample_csv):
+    result = read_bikes_csv(file_path=str(sample_csv), mode="nrows", nrows=3)
+    assert len(result) == 3
+
+def test_skip_rows(sample_csv):
+    result = read_bikes_csv(file_path=str(sample_csv), mode="skip", skip_rows=range(1, 3))
+    # Проверяем, что пропущены строки 1 и 2 (нумерация с 0 или 1 зависит от реализации)
+    # Например, если пропущены 2 строки, размер меньше на 2
+    assert len(result) == 2

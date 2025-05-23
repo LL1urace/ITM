@@ -1,22 +1,19 @@
 import pytest
-from Data_structures_1.part_6.task_1 import binary_search
+from IO_streams_5.task_2 import file_read
+import io
 
 
 
-@pytest.mark.parametrize(
-    "arr, target, expected",
-    [
-        ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-        ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-        ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-        ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-        ([], 10, -1),                            # Пустой список
-        ([10], 10, 0),                           # Один элемент — совпадает
-        ([10], 5, -1),                           # Один элемент — не совпадает
-        ([2, 4], 2, 0),                          # Два элемента — начало
-        ([2, 4], 4, 1),                          # Два элемента — конец
-        ([2, 4], 3, -1),                         # Два элемента — между ними
-    ]
-)
-def test_binary_search(arr, target, expected):
-    assert binary_search(arr, target) == expected
+def test_file_read(monkeypatch):
+    fake_content = "тестовый текст"
+    fake_file = io.StringIO(fake_content)
+    monkeypatch.setattr("builtins.open", lambda *args, **kwargs: fake_file)
+    content = file_read()
+    assert content == fake_content
+
+
+
+def test_file_read():
+    expected_content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\n"
+    content = file_read()
+    assert content == expected_content

@@ -6,25 +6,53 @@ import pandas as pd
 import pathlib
 
 
+def read_bikes_csv(
+        mode="all",
+        nrows=None,
+        skip_rows=None,
+        show_info=True,
+        file_path=None  # Добавлен параметр для пути к файлу
+):
+    """
+    Чтение CSV-файла с разными режимами.
+
+    :param file_path: путь к csv файлу. Если None — используется стандартный путь.
+    """
+    if file_path is None:
+        work_path = pathlib.Path.cwd()
+        data_path = pathlib.Path(work_path, 'files/task_6', "bikes.csv")
+    else:
+        data_path = pathlib.Path(file_path)
+
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.width', None)
+
+    if mode == "head":
+        df = pd.read_csv(data_path)
+        result = df.head(10)
+    elif mode == "nrows":
+        result = pd.read_csv(data_path, nrows=nrows)
+    elif mode == "skip":
+        result = pd.read_csv(data_path, skiprows=skip_rows)
+    else:  # mode == "all"
+        result = pd.read_csv(data_path)
+
+    if show_info:
+        print(result)
+
+    return result
+
+
+# Пример вызова
 if __name__ == "__main__":
-    work_path = pathlib.Path.cwd()
-    data_path = pathlib.Path(work_path, 'files/task_6', "bikes.csv")
+    # Прочитать всё
+    read_bikes_csv(mode="all")
 
-    pd.set_option('display.max_columns', None)  # Показывать все столбцы
-    pd.set_option('display.width', None) # Не ограничивать ширину вывода
+    # Прочитать первые 10 строк
+    # read_bikes_csv(mode="head")
 
+    # Прочитать 3 строки
+    # read_bikes_csv(mode="nrows", nrows=3)
 
-    # data = pd.read_csv(data_path, header=0) # header=None - если нет заголовков
-    # print(data.head(10))
-
-
-    # data = pd.read_csv(data_path, nrows=3)
-    # print(data)
-
-
-    # data = pd.read_csv(data_path, header=0, skiprows=range(1, 3))
-    # print(data)
-
-
-    data = pd.read_csv(data_path)
-    print(data)
+    # Пропустить строки с 1 по 2
+    # read_bikes_csv(mode="skip", skip_rows=range(1, 3))

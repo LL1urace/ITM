@@ -1,15 +1,22 @@
 # Практика:
 
 # 13. Найти факториалы чисел от 1 до 5 (включительно).
-def find_factorial() -> None:
-    """Находит факториалы чисел от 1 до 5 (включительно)."""
+from typing import List
+
+def find_factorial() -> List[str]:
+    """Возвращает факториалы чисел от 1 до 5 (включительно)."""
+    factorials = []
     for f in range(1, 6):
-        print("Значение:", f, end=" => ")
+        factorials.append(f"Значение: {f}")
+        rf = f
         for j in range(1, f):
-            f *= j
-        print("Факториал:", f)
+            rf *= j
+        factorials[f-1] += f" Факториал: {rf}"
+    return factorials
 
 
 
 if __name__ == "__main__":
-    find_factorial()
+    factorials_list = find_factorial()
+    for fc in factorials_list:
+        print(fc)

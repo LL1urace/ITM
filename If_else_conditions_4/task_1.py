@@ -8,31 +8,24 @@
 
 # If Else
 # 1. Даны три целых числа. Найти количество положительных чисел в исходном наборе.
-def find_positive_nums_count() -> None:
+def find_positive_nums_count(fn, sn, tn) -> int:
     """Поиск кол-ва положительных чисел в наборе из 3-х целых чисел"""
-    print("Поиск кол-ва положительных чисел в наборе из 3-х целых чисел:")
-    first_num = input("Введите первое число: ")
-    second_num = input("Введите второе число: ")
-    third_num = input("Введите третье число: ")
     try:
-        first_num = int(first_num)
-        second_num = int(second_num)
-        third_num = int(third_num)
+        fn = int(fn)
+        sn = int(sn)
+        tn = int(tn)
     except ValueError:
-        print("Ошибка-ввода: Не все значения являются целыми числами")
-        return
-
+        raise ValueError("Не все значения являются целыми числами!")
     count = 0  # счётчик положительных чисел
+    if fn > 0:
+        count += 1
+    if sn > 0:
+        count += 1
+    if tn > 0:
+        count += 1
+    return count
 
-    if first_num > 0:
-        count += 1
-    if second_num > 0:
-        count += 1
-    if third_num > 0:
-        count += 1
-
-    print(f"Количество положительных чисел: {count}")
 
 
 if __name__ == "__main__":
-    find_positive_nums_count()
+    print(find_positive_nums_count(1, 2, 3))

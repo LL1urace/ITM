@@ -11,16 +11,16 @@ class MeansOfTransport:
         self.brand = brand
         self.color = color
 
-    def show_color(self) -> None: #  напечатать цвет ТС
+    def show_color(self) -> str: #  напечатать цвет ТС
         """Выводит на экран цвет транспортного средства."""
-        print(f"Цвет ТС: {self.color}")
+        return f"Цвет ТС: {self.color}"
 
-    def show_brand(self) -> None: #  напечатать марку ТС
+    def show_brand(self) -> str: #  напечатать марку ТС
         """Выводит на экран марку транспортного средства."""
-        print(f"Марка ТС: {self.brand}")
+        return f"Марка ТС: {self.brand}"
 
 
 if __name__ == "__main__":
     car = MeansOfTransport("Ferrari", "Red")
-    car.show_brand()
-    car.show_color()
+    print(car.show_brand())
+    print(car.show_color())
