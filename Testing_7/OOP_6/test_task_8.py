@@ -1,23 +1,24 @@
 import pytest
-from OOP_6.task_4 import MeansOfTransport
-from OOP_6.task_8 import Car
+from OOP_6.task_8 import Car, MeansOfTransport
+from io import StringIO
+import sys
 
+@pytest.fixture
+def car():
+    return Car("Maserati", "White", 4)
 
+def test_init(car):
+    assert car.brand == "Maserati"
+    assert car.color == "White"
+    assert car.wheel_count == 4
 
-# @pytest.mark.parametrize(
-#     "arr, target, expected",
-#     [
-#         ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-#         ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-#         ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-#         ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-#         ([], 10, -1),                            # Пустой список
-#         ([10], 10, 0),                           # Один элемент — совпадает
-#         ([10], 5, -1),                           # Один элемент — не совпадает
-#         ([2, 4], 2, 0),                          # Два элемента — начало
-#         ([2, 4], 4, 1),                          # Два элемента — конец
-#         ([2, 4], 3, -1),                         # Два элемента — между ними
-#     ]
-# )
-# def test_binary_search(arr, target, expected):
-#     assert binary_search(arr, target) == expected
+def test_return_car_drive():
+    assert Car.return_car_drive() == "Car_drive = 4"
+
+def test_show_wheel_count(car):
+    captured_output = StringIO()
+    sys.stdout = captured_output
+    car.show_wheel_count()
+    sys.stdout = sys.__stdout__
+
+    assert captured_output.getvalue().strip() == "Количество колёс автомобиля: 4"

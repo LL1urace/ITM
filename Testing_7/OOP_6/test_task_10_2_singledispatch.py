@@ -3,20 +3,37 @@ from OOP_6.task_10_2_singledispatch import Calculator
 
 
 
-# @pytest.mark.parametrize(
-#     "arr, target, expected",
-#     [
-#         ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-#         ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-#         ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-#         ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-#         ([], 10, -1),                            # Пустой список
-#         ([10], 10, 0),                           # Один элемент — совпадает
-#         ([10], 5, -1),                           # Один элемент — не совпадает
-#         ([2, 4], 2, 0),                          # Два элемента — начало
-#         ([2, 4], 4, 1),                          # Два элемента — конец
-#         ([2, 4], 3, -1),                         # Два элемента — между ними
-#     ]
-# )
-# def test_binary_search(arr, target, expected):
-#     assert binary_search(arr, target) == expected
+@pytest.fixture
+def calc():
+    return Calculator()
+
+
+def test_addition_with_ints(calc):
+    assert calc.addition(2, 3) == 5
+    assert calc.addition(-1, 4) == 3
+
+
+def test_addition_with_floats(calc):
+    assert calc.addition(2.5, 3.5) == 6.0
+    assert calc.addition(-1.1, 1.1) == 0.0
+
+
+def test_addition_with_mixed_numbers(calc):
+    assert calc.addition(3, 2.5) == 5.5
+    assert calc.addition(2.5, 3) == 5.5
+
+
+def test_addition_with_strings(calc):
+    assert calc.addition("hello", " world") == "hello world"
+    assert calc.addition("", "test") == "test"
+
+
+def test_addition_invalid_types(calc):
+    with pytest.raises(TypeError):
+        calc.addition(1, "a")
+    with pytest.raises(TypeError):
+        calc.addition("a", 1)
+    with pytest.raises(TypeError):
+        calc.addition([1, 2], [3, 4])
+    with pytest.raises(TypeError):
+        calc.addition(None, None)

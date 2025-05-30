@@ -5,8 +5,8 @@ class MeansOfTransport:
     """Класс для определения цвета и марки машины."""
 
     def __init__(self, brand, color):
-        self.brand = brand
-        self.color = color
+        self.__brand = brand
+        self.__color = color
 
     def show_color(self) -> None: #  напечатать цвет ТС
         """Выводит на экран цвет транспортного средства."""
@@ -16,20 +16,27 @@ class MeansOfTransport:
         """Выводит на экран марку транспортного средства."""
         print(f"Марка ТС: {self.brand}")
 
-
     # Сеттеры и геттеры
-    def set_attrs(self, brand, color) -> None:
-        """Устанавливает значения для марки и цвета ТС."""
-        self.brand = brand
-        self.color = color
+    @property
+    def color(self):
+        return self.__color
 
-    def get_attrs(self) -> tuple[str, str]:
-        """Возвращает значения для марки и цвета ТС."""
-        return self.brand, self.color
+    @color.setter
+    def color(self, color):
+        self.__color = color
+
+    @property
+    def brand(self):
+        return self.__brand
+
+    @brand.setter
+    def brand(self, brand):
+        self.__brand = brand
+
 
 
 if __name__ == "__main__":
     car = MeansOfTransport("Ferrari", "Red")
-    car.set_attrs("Maserati", "White")
-    brand, color = car.get_attrs()
-    print(brand, color)
+    car.brand = "Maserati"
+    car.color = "White"
+    print(car.brand, car.color)

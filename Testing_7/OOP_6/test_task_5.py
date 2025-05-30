@@ -1,23 +1,25 @@
 import pytest
-from OOP_6.task_4 import MeansOfTransport
-from OOP_6.task_5 import Car, Moped
+from OOP_6.task_5 import Car, Moped, MeansOfTransport
 
 
 
-# @pytest.mark.parametrize(
-#     "arr, target, expected",
-#     [
-#         ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-#         ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-#         ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-#         ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-#         ([], 10, -1),                            # Пустой список
-#         ([10], 10, 0),                           # Один элемент — совпадает
-#         ([10], 5, -1),                           # Один элемент — не совпадает
-#         ([2, 4], 2, 0),                          # Два элемента — начало
-#         ([2, 4], 4, 1),                          # Два элемента — конец
-#         ([2, 4], 3, -1),                         # Два элемента — между ними
-#     ]
-# )
-# def test_binary_search(arr, target, expected):
-#     assert binary_search(arr, target) == expected
+
+@pytest.fixture
+def init_classes() -> tuple['Car', 'Moped']:
+    car = Car("Maserati", "White", 4)
+    moped = Moped("ALPHA RX 11", "Red", 2)
+    return car, moped
+
+
+def test_show_wheel_count(init_classes):
+    car, moped = init_classes
+    wc_car = car.show_wheel_count()
+    wc_moped = moped.show_wheel_count()
+    assert wc_car == "Количество колёс автомобиля: 4"
+    assert wc_moped == "Количество колёс мопеда: 2"
+    car.wheel_count = 8
+    moped.wheel_count = 4
+    wc_car = car.show_wheel_count()
+    wc_moped = moped.show_wheel_count()
+    assert wc_car == "Количество колёс автомобиля: 8"
+    assert wc_moped == "Количество колёс мопеда: 4"

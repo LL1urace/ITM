@@ -257,37 +257,37 @@ class Car:
     # __gt__(>), __le__(<=), __ge__(>=))
     def __eq__(self, other: 'Car') -> bool:
         if not isinstance(other, Car):
-            raise NotImplemented("Сравниваемые экземпляры должны быть созданы от одного класса Car!")
+            return NotImplemented
         return self.__price == other.__price and self.__year == other.__year
 
 
     def __ne__(self, other: 'Car') -> bool: # Необязательный метод
         if not isinstance(other, Car):
-            raise NotImplemented("Сравниваемые экземпляры должны быть созданы от одного класса Car!")
+            return NotImplemented
         return self.__price != other.__price and self.__year != other.__year
 
 
     def __lt__(self, other: 'Car') -> bool:
         if not isinstance(other, Car):
-            raise NotImplemented("Сравниваемые экземпляры должны быть созданы от одного класса Car!")
+            return NotImplemented
         return self.__price < other.__price and self.__year < other.__year
 
 
     def __gt__(self, other: 'Car') -> bool: # Необязательный метод
         if not isinstance(other, Car):
-            raise NotImplemented("Сравниваемые экземпляры должны быть созданы от одного класса Car!")
+            return NotImplemented
         return self.__price > other.__price and self.__year > other.__year
 
 
     def __le__(self, other: 'Car') -> bool:
         if not isinstance(other, Car):
-            raise NotImplemented("Сравниваемые экземпляры должны быть созданы от одного класса Car!")
+            return NotImplemented
         return self.__price <= other.__price and self.__year <= other.__year
 
 
     def __ge__(self, other: 'Car') -> bool: # Необязательный метод
         if not isinstance(other, Car):
-            raise NotImplemented("Сравниваемые экземпляры должны быть созданы от одного класса Car!")
+            return NotImplemented
         return self.__price >= other.__price and self.__year >= other.__year
 
 

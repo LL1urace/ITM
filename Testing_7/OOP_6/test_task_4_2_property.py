@@ -1,5 +1,5 @@
 import pytest
-from OOP_6.task_4 import MeansOfTransport
+from OOP_6.task_4_2_property import MeansOfTransport
 
 
 
@@ -10,13 +10,14 @@ def init_car():
 
 def test_get_attrs(init_car):
     car = init_car
-    brand, color = car.get_attrs()
+    brand, color = car.brand, car.color
     assert brand == "БМВ"
     assert color == "Черный"
 
 
 def test_set_attrs(init_car):
     car = init_car
-    car.set_attrs("Машина какая-та", "Какой-то цвет")
+    car.brand = "Машина какая-та"
+    car.color = "Какой-то цвет"
     assert car.brand == "Машина какая-та"
     assert car.color == "Какой-то цвет"

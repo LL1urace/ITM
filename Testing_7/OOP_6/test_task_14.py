@@ -3,20 +3,44 @@ from OOP_6.task_14 import People
 
 
 
-# @pytest.mark.parametrize(
-#     "arr, target, expected",
-#     [
-#         ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-#         ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-#         ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-#         ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-#         ([], 10, -1),                            # Пустой список
-#         ([10], 10, 0),                           # Один элемент — совпадает
-#         ([10], 5, -1),                           # Один элемент — не совпадает
-#         ([2, 4], 2, 0),                          # Два элемента — начало
-#         ([2, 4], 4, 1),                          # Два элемента — конец
-#         ([2, 4], 3, -1),                         # Два элемента — между ними
-#     ]
-# )
-# def test_binary_search(arr, target, expected):
-#     assert binary_search(arr, target) == expected
+def test_init():
+    p = People(["Аня", "Борис"])
+    assert p.people_list == ["Аня", "Борис"]
+
+
+def test_add_people_str():
+    p = People([])
+    p.add_people("Вася")
+    assert p.people_list == ["Вася"]
+
+
+def test_add_people_list():
+    p = People([])
+    p.add_people(["Петя", "Маша"])
+    assert p.people_list == ["Петя", "Маша"]
+
+
+def test_add_people_empty_list():
+    p = People([])
+    with pytest.raises(TypeError):
+        p.add_people([])  # пустой список — ошибка
+
+
+def test_add_people_invalid_type():
+    p = People([])
+    with pytest.raises(TypeError):
+        p.add_people([123])  # не строка в списке — ошибка
+    with pytest.raises(TypeError):
+        p.add_people(123)  # не строка и не список — ошибка
+
+
+def test_iteration():
+    names = ["Аня", "Борис", "Вася"]
+    p = People(names)
+    result = [person for person in p]
+    assert result == names
+
+
+def test_str():
+    p = People(["Аня", "Борис"])
+    assert str(p) == "People: Аня,Борис.\n"

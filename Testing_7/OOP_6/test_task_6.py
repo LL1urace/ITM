@@ -1,23 +1,28 @@
 import pytest
-from OOP_6.task_4 import MeansOfTransport
-from OOP_6.task_6 import Moped
+from OOP_6.task_6 import Moped, MeansOfTransport
 
 
 
-# @pytest.mark.parametrize(
-#     "arr, target, expected",
-#     [
-#         ([1, 3, 5, 7, 9, 11, 13], 7, 3),         # Элемент посередине
-#         ([1, 3, 5, 7, 9, 11, 13], 1, 0),         # Первый элемент
-#         ([1, 3, 5, 7, 9, 11, 13], 13, 6),        # Последний элемент
-#         ([1, 3, 5, 7, 9, 11, 13], 4, -1),        # Несуществующий элемент
-#         ([], 10, -1),                            # Пустой список
-#         ([10], 10, 0),                           # Один элемент — совпадает
-#         ([10], 5, -1),                           # Один элемент — не совпадает
-#         ([2, 4], 2, 0),                          # Два элемента — начало
-#         ([2, 4], 4, 1),                          # Два элемента — конец
-#         ([2, 4], 3, -1),                         # Два элемента — между ними
-#     ]
-# )
-# def test_binary_search(arr, target, expected):
-#     assert binary_search(arr, target) == expected
+@pytest.fixture
+def init_class():
+    return Moped("ALPHA RX 11", "Red", 2)
+
+
+def test_calc_time_valid_data(init_class):
+    moped = init_class
+    time = moped.calc_time(100, 10)
+    assert time == (100 / 10)
+    time = moped.calc_time("1200", 5)
+    assert time == (1200 / 5)
+    time = moped.calc_time(16530.26, "70")
+    assert time == (float("16530.26") / 70)
+
+
+def test_calc_time_invalid_data(init_class):
+    moped = init_class
+    with pytest.raises((TypeError, ValueError, ZeroDivisionError)):
+        assert moped.calc_time("Очень много км.", 10)
+        assert moped.calc_time("Очень много км.", "Очень быстро.")
+        assert moped.calc_time(None, None)
+        assert moped.calc_time(15, 0)
+        assert moped.calc_time(0, 0)
