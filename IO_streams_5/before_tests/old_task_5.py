@@ -6,19 +6,19 @@
 # №1 (Ошибка - переполнения подключений к файлу)
 # lst = []
 # for i in range(10000):
-#     lst.append(open("files/task_5/passwords.txt", 'w'))
+#     lst.append(open("files_task2/task_5/passwords.txt", 'w'))
 
 
 # №2 (Ошибки нет из-за закрытия файла)
 # lst = []
 # for i in range(10000):
-#     file = open("files/task_5/passwords.txt", 'w')
+#     file = open("files_task2/task_5/passwords.txt", 'w')
 #     lst.append(file)
 #     file.close()
 
 
 # №3 Используем контекстный менеджер
-# with open("files/task_5/passwords.txt", 'w') as f:
+# with open("files_task2/task_5/passwords.txt", 'w') as f:
 #     f.write('123')
 #     f.write('hello')
 # print('end')
@@ -27,12 +27,12 @@
 # №4 (Ошибки нет из-за закрытия файла контекстным менеджером)
 # lst = []
 # for i in range(10000):
-#     with open("files/task_5/passwords.txt", 'w') as f:
+#     with open("files_task2/task_5/passwords.txt", 'w') as f:
 #         lst.append(f)
 
 
 # №5 (Взаимодействие с файлом за границей контекста)
-# with open("files/task_5/passwords.txt", 'w') as f:
+# with open("files_task2/task_5/passwords.txt", 'w') as f:
 #     f.write('123')
 #     f.write('hello')
 # print(f)
@@ -40,7 +40,7 @@
 
 
 # №6 (Ошибки нет из-за закрытия файла контекстным менеджером)
-# with open("files/task_5/passwords.txt", 'w') as f:
+# with open("files_task2/task_5/passwords.txt", 'w') as f:
 #     f.write('123')
 #     f.write('hello')
 # print(f)
@@ -48,7 +48,7 @@
 
 
 # №7 (Ошибка - контекстный менеджер работает только с объектами без метода __enter__)
-# with print("files/task_5/passwords.txt", 'w') as f:
+# with print("files_task2/task_5/passwords.txt", 'w') as f:
 #     f.write('123')
 #     f.write('hello')
 # print(f.write('123'))

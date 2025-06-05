@@ -22,7 +22,7 @@ def demo_open_many_files_with_closing():
     return "OK"
 
 # 3. Контекстный менеджер
-def demo_write_with_context_manager(file_path="files/task_5/passwords.txt"):
+def demo_write_with_context_manager(file_path="files_task2/task_5/passwords.txt"):
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, 'w', encoding='utf-8') as f:
         f.write('123\n')
@@ -57,7 +57,7 @@ def demo_write_closed_file_error():
 # 7. Ошибка: print не поддерживает контекст
 def demo_with_non_context_object():
     try:
-        with print("files/task_5/passwords.txt", 'w') as f:
+        with print("files_task2/task_5/passwords.txt", 'w') as f:
             f.write("test\n")
     except Exception as e:
         return f"Error: {e}"

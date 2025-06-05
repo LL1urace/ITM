@@ -6,7 +6,7 @@ import pandas as pd
 import pathlib
 
 work_path = pathlib.Path.cwd()
-data_path = pathlib.Path(work_path, 'files/task_6', "bikes.csv")
+data_path = pathlib.Path(work_path, 'files_task2/task_6', "bikes.csv")
 
 pd.set_option('display.max_columns', None)  # Показывать все столбцы
 pd.set_option('display.width', None) # Не ограничивать ширину вывода

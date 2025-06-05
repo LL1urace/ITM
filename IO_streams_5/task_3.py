@@ -6,7 +6,7 @@ from idlelib.outwin import file_line_progs
 # Попробуйте открыть файлы с разными значениями mode для чтения.
 import os
 
-def demonstrate_file_modes(base_dir="files/task_3"):
+def demonstrate_file_modes(base_dir="files_task2/task_3"):
     os.makedirs(base_dir, exist_ok=True)
 
     with open(os.path.join(base_dir, "file_w.txt"), 'w') as file_w:

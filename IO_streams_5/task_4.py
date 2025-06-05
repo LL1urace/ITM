@@ -6,7 +6,7 @@ import os
 
 
 
-def file_write_modes_testing(base_dir="files/task_4"):
+def file_write_modes_testing(base_dir="files_task2/task_4"):
     os.makedirs(base_dir, exist_ok=True)
 
     results = {}

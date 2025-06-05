@@ -6,11 +6,11 @@ from idlelib.outwin import file_line_progs
 # Попробуйте открыть файлы с разными значениями mode для чтения.
 
 # r и r+ выдают ошибки так как требуют чтобы файл существовал
-# file_r = open("files/task_3/file_r.txt", 'r') # r
-# file_rplus = open("files/task_3/file_rplus.txt", 'r+') # r+
+# file_r = open("files_task2/task_3/file_r.txt", 'r') # r
+# file_rplus = open("files_task2/task_3/file_rplus.txt", 'r+') # r+
 
 # остальные создают новый файл в указанной директории
-file_w = open("files/task_3/file_w.txt", 'w') # w
-file_wplus = open("files/task_3/file_wplus.txt", 'w+') # w+
-file_a = open("files/task_3/file_a.txt", 'a') # a
-file_aplus = open("files/task_3/file_aplus.txt", 'a+') # a+
+file_w = open("files_task2/task_3/file_w.txt", 'w') # w
+file_wplus = open("files_task2/task_3/file_wplus.txt", 'w+') # w+
+file_a = open("files_task2/task_3/file_a.txt", 'a') # a
+file_aplus = open("files_task2/task_3/file_aplus.txt", 'a+') # a+
