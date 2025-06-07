@@ -10,8 +10,7 @@ def create_file_with_index(index: int) -> None:
     with open(f"files_task2/file_{index}.txt", "w", encoding="utf-8") as f:
         f.write(str(index))
 
-
-if __name__ == "__main__":
+def main():
     time_start = time.perf_counter()
     threads = []
     for i in range(10):
@@ -24,3 +23,7 @@ if __name__ == "__main__":
 
     time_end = time.perf_counter()
     print(f"Time: {time_end - time_start:.6f} seconds")
+
+
+if __name__ == "__main__":
+    main()

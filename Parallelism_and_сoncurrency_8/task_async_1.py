@@ -47,12 +47,17 @@ def get_collection_divisors(number: int) -> List[int]:
     return unique_sorted
 
 
+def main(number: int, verbose: bool = False) -> List[int]:
+    start = perf_counter()
+    result = get_collection_divisors(number)
+    end = perf_counter()
+    if verbose:
+        print(result)
+        print(len(result))
+        print(f"Time: {end - start:.6f} seconds")
+    return result
+
+
 if __name__ == "__main__":
     num = randint(1_000_000, 20_000_000)
-    not_rand = 75815700
-    time_start = perf_counter() # Запоминаем время перед вызовом функции
-    result = get_collection_divisors(not_rand)
-    print(result)
-    print(len(result))
-    time_end = perf_counter()
-    print(f"Time: {time_end - time_start:.6f} seconds")
+    main(number=4, verbose=True)

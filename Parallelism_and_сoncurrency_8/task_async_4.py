@@ -14,11 +14,11 @@ import time
 
 async def write_response(data: str) -> None:
     async with asyncio.Lock():
-        async with aiofiles.open(file="responses.txt", mode="a") as f:
+        async with aiofiles.open(file="files_task4/responses.txt", mode="a") as f:
             await f.write(data + '\n')
 
 
-async def limit_fetch(url: str,
+async def limited_fetch(url: str,
                       session: aiohttp.ClientSession,
                       semaphore: asyncio.Semaphore) -> None:
         async with semaphore:
@@ -33,7 +33,7 @@ async def main():
     url = "https://example.com"
     limit = asyncio.Semaphore(10)
     async with aiohttp.ClientSession() as session:
-        coroutines = [limit_fetch(url, session, limit) for _ in range(50)]
+        coroutines = [limited_fetch(url, session, limit) for _ in range(50)]
         await asyncio.gather(*coroutines)
     time_end = time.perf_counter()
     print(f"Time: {time_end - time_start:.6f} seconds")
