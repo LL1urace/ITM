@@ -2,16 +2,13 @@
 #
 # 5. Перекройте тестами выше указанные задачи.
 import pytest
-
 from Parallelism_and_сoncurrency_8 import task_async_1
-from Parallelism_and_сoncurrency_8 import task_async_2
-from Parallelism_and_сoncurrency_8 import task_async_3
-from Parallelism_and_сoncurrency_8 import task_async_4
 
 
 
-# Task 1 (get_divisors_in_range, get_collection_divisors, main)
+# Task №1 (get_divisors_in_range, get_collection_divisors, main)
 # get_collection_divisors()
+# Валидные и невалидные данные обработка
 @pytest.mark.parametrize(
     ("number", "expected"),
     [
@@ -42,6 +39,7 @@ def test_get_collection_divisors(number, expected):
 
 
 # get_divisors_in_range
+# Диапазон для валидных данных
 @pytest.mark.parametrize(
     ("args", "expected"),
     [
@@ -55,36 +53,3 @@ def test_get_collection_divisors(number, expected):
 def test_get_divisors_in_range(args, expected):
     result = task_async_1.get_divisors_in_range(args)
     assert sorted(list(set(result))) == sorted(expected)
-
-
-
-# Task 2 (create_file_with_index, main)
-# create_file_with_index
-
-
-
-# main
-
-
-
-
-# Task 3 (limited_fetch, main)
-# limited_fetch
-
-
-
-# main
-
-
-
-
-# Task 4 (write_response, limited_fetch, main)
-# write_response
-
-
-
-# limited_fetch
-
-
-
-# main

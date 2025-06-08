@@ -1,22 +1,23 @@
 # Практика:
 #
-# 4. Написать асинхронный код, который делает 50 get запросов к https://example.com.
-# Записать все статусы ответов в файл и убедиться, что количество запросов соответствует заданному количеству.
-# Необходимо учесть, чтобы одновременно выполнялось не больше 10 запросов.
-# Для выполнения запросов использовать библиотеку aiohttp.
-# Все значения, количество запросов, лимит одновременно выполняемых запросов и url должны передаваться как параметры.
+# 5. Выполните профилирование для определения точек потребления памяти и просадок по времени.
 import aiohttp
 import asyncio
 import aiofiles
 import time
+import os
+from scalene import scalene_profiler
+
 
 
 
 file_lock = asyncio.Lock()
 
-async def write_response(data: str, folder: str = "files_task4") -> None:
+# Task №4
+async def write_response(data: str) -> None:
+    os.makedirs("files_task4", exist_ok=True)
     async with file_lock:
-        async with aiofiles.open(file=f"{folder}/responses.txt", mode="a") as f:
+        async with aiofiles.open(file="files_task4/responses.txt", mode="a") as f:
             await f.write(data + '\n')
 
 
@@ -42,6 +43,17 @@ async def main(url: str = "https://example.com",
     print(f"Time: {time_end - time_start:.6f} seconds")
 
 
+def run_profile():
+    # Опционально: HTML отчет
+    os.environ["SCALENE_HTML"] = "true"
+    # scalene_profiler.start()
+
+    asyncio.run(main())
+
+    #scalene_profiler.stop()
+
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    run_profile()
+
+    # scalene Parallelism_and_сoncurrency_8/profile/profile_task_async_5_4.py

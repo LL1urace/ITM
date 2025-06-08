@@ -4,14 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b660e636-ad02-475c-ac86-81f6ba39872d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/profile/profile_task_async_5.py" afterDir="false" />
+    <list default="true" id="b660e636-ad02-475c-ac86-81f6ba39872d" name="Changes" comment="8_Parallelism_and_сoncurrency - in work">
+      <change afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/profile/profile_task_async_5_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/profile/profile_task_async_5_3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/profile/profile_task_async_5_4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/tests/test_task_async_5_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/tests/test_task_async_5_3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/tests/test_task_async_5_4.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ITM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ITM.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/files_task4/responses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/profile/profile_task_async_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/profile/profile_task_async_5_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/task_async_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/task_async_1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/task_async_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/task_async_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/task_async_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/task_async_3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/task_async_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/task_async_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/task_async_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/tests/test_task_async_5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/tests/test_task_async_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/tests/test_task_async_5_1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,38 +34,57 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2xE8U1L0HJmaEe3qKAbertRpWXd" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests in test_task_7.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_task_async_5.test_get_collection_divisors.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_task_async_5.test_get_divisors_in_range.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest for test_task_async_5.test_simple_number.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_5.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_async_1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_async_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.task_async_4.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_task_3.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ll1urace/PycharmProjects/ITM/Parallelism_and_сoncurrency_8/profile&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests in test_task_7.py.executor": "Run",
+    "Python tests.pytest for test_task_async_5.test_create_file_with_index.executor": "Run",
+    "Python tests.pytest for test_task_async_5.test_get_collection_divisors.executor": "Run",
+    "Python tests.pytest for test_task_async_5.test_get_divisors_in_range.executor": "Run",
+    "Python tests.pytest for test_task_async_5.test_main_task_2.executor": "Run",
+    "Python tests.pytest for test_task_async_5.test_simple_number.executor": "Run",
+    "Python tests.pytest for test_task_async_5_2.test_create_file_with_index.executor": "Run",
+    "Python tests.pytest for test_task_async_5_3.test_limited_fetch.executor": "Run",
+    "Python tests.pytest for test_task_async_5_3.test_main_task_3.executor": "Run",
+    "Python tests.pytest for test_task_async_5_4.test_limited_fetch.executor": "Run",
+    "Python tests.pytest for test_task_async_5_4.test_write_response.executor": "Run",
+    "Python tests.pytest in test_task_async_5.py.executor": "Run",
+    "Python.profile_task_async_5.executor": "Run",
+    "Python.profile_task_async_5_1.executor": "Run",
+    "Python.profile_task_async_5_2 (1).executor": "Run",
+    "Python.profile_task_async_5_2.executor": "Run",
+    "Python.profile_task_async_5_3.executor": "Run",
+    "Python.profile_task_async_5_4.executor": "Run",
+    "Python.task_5.executor": "Run",
+    "Python.task_async_1.executor": "Run",
+    "Python.task_async_2.executor": "Run",
+    "Python.task_async_4.executor": "Run",
+    "Python.test_task_3.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/Study/it_projects/ITM/Parallelism_and_сoncurrency_8/profile",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Study\it_projects\ITM\Parallelism_and_сoncurrency_8\profile" />
+      <recent name="E:\Study\it_projects\ITM\Parallelism_and_сoncurrency_8\tests" />
       <recent name="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/profile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest for test_task_async_5.test_get_divisors_in_range">
-    <configuration name="pytest for test_task_async_5.test_get_collection_divisors" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.pytest for test_task_async_5_4.test_limited_fetch">
+    <configuration name="pytest for test_task_async_5_2.test_create_file_with_index" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="ITM" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,11 +97,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_task_async_5.test_get_collection_divisors&quot;" />
+      <option name="_new_target" value="&quot;test_task_async_5_2.test_create_file_with_index&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_task_async_5.test_get_divisors_in_range" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_task_async_5_3.test_limited_fetch" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="ITM" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -86,11 +114,11 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_task_async_5.test_get_divisors_in_range&quot;" />
+      <option name="_new_target" value="&quot;test_task_async_5_3.test_limited_fetch&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_task_async_5.test_simple_number" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest for test_task_async_5_3.test_main_task_3" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="ITM" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,15 +131,51 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_task_async_5.test_simple_number&quot;" />
+      <option name="_new_target" value="&quot;test_task_async_5_3.test_main_task_3&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_task_async_5_4.test_limited_fetch" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="ITM" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_task_async_5_4.test_limited_fetch&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_task_async_5_4.test_write_response" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="ITM" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Parallelism_and_сoncurrency_8/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_task_async_5_4.test_write_response&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest for test_task_async_5.test_get_divisors_in_range" />
-        <item itemvalue="Python tests.pytest for test_task_async_5.test_get_collection_divisors" />
-        <item itemvalue="Python tests.pytest for test_task_async_5.test_simple_number" />
+        <item itemvalue="Python tests.pytest for test_task_async_5_4.test_limited_fetch" />
+        <item itemvalue="Python tests.pytest for test_task_async_5_4.test_write_response" />
+        <item itemvalue="Python tests.pytest for test_task_async_5_3.test_main_task_3" />
+        <item itemvalue="Python tests.pytest for test_task_async_5_3.test_limited_fetch" />
+        <item itemvalue="Python tests.pytest for test_task_async_5_2.test_create_file_with_index" />
       </list>
     </recent_temporary>
   </component>

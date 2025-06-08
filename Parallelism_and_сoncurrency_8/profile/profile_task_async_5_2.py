@@ -1,17 +1,24 @@
 # Практика:
 #
-# 2. Напишите скрипт который создаст параллельно 10 файлов
-# с именем `file_ {index}.txt' и записывает их номер внутрь файла.
+# 5. Выполните профилирование для определения точек потребления памяти и просадок по времени.
 import os
 import time
 import threading
+import cProfile
+import pstats
+from memory_profiler import profile
 
+
+
+# Task №2
 # Создаем файл и записываем индекс внутрь
 def create_file_with_index(index: int, folder: str = "files_task2") -> None:
     os.makedirs(folder, exist_ok=True)
     with open(f"{folder}/file_{index}.txt", "w", encoding="utf-8") as f:
         f.write(str(index))
 
+
+@profile
 def main():
     time_start = time.perf_counter()
     threads = []
@@ -28,5 +35,13 @@ def main():
 
 
 
+
 if __name__ == "__main__":
+    profiler = cProfile.Profile()
+    profiler.enable()
     main()
+    profiler.disable()
+    stats = pstats.Stats(profiler)
+    stats.strip_dirs()
+    stats.sort_stats('cumtime')
+    stats.print_stats(15)

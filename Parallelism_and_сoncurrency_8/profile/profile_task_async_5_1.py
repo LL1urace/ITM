@@ -1,15 +1,17 @@
 # Практика:
 #
-# 1. Дано число в диапазоне от 1_000_000 до 20_000_000.
-# Получите список целочисленных делителей этого числа.
+# 5. Выполните профилирование для определения точек потребления памяти и просадок по времени.
 from multiprocessing import Pool, cpu_count
-from random import randint
 from typing import List
 from math import sqrt
 from time import perf_counter
+import cProfile
+import pstats
+from memory_profiler import profile
 
 
 
+# Task №1
 # Ищем делители в заданном диапазоне
 def get_divisors_in_range(args: tuple[int, int, int]) -> List[int]:
     number, start, end = args
@@ -22,6 +24,7 @@ def get_divisors_in_range(args: tuple[int, int, int]) -> List[int]:
                 divisors_list.append(number // div)
 
     return divisors_list
+
 
 # Разбиваем на диапазоны
 # Собираем делители, сортируем и удаляем повторы
@@ -46,6 +49,8 @@ def get_collection_divisors(number: int) -> List[int]:
     unique_sorted = sorted(set(flat_list))
     return unique_sorted
 
+
+@profile
 def main(number: int, verbose: bool = False) -> List[int]:
     start = perf_counter()
     result = get_collection_divisors(number)
@@ -57,6 +62,14 @@ def main(number: int, verbose: bool = False) -> List[int]:
     return result
 
 
+
+
 if __name__ == "__main__":
-    num = randint(1_000_000, 20_000_000)
-    main(number=4, verbose=True)
+    profiler = cProfile.Profile()
+    profiler.enable()
+    main(number=3600000)
+    profiler.disable()
+    stats = pstats.Stats(profiler)
+    stats.strip_dirs()  # убрать пути, оставить только имена
+    stats.sort_stats("cumtime")  # сортировка по суммарному времени
+    stats.print_stats(10)

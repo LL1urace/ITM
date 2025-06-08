@@ -1,14 +1,16 @@
 # Практика:
 #
-# 3. Реализуйте асинхронный метод, который будет отправлять запросы в http://google.com
-# по http с ограничением не более 10 запросов в единицу времени.
+# 5. Выполните профилирование для определения точек потребления памяти и просадок по времени.
 import aiohttp
 import asyncio
 import aiolimiter
 import time
+import cProfile
+import pstats
+import tracemalloc
 
 
-
+# Task №3
 async def limited_fetch(url: str,
                         session: aiohttp.ClientSession,
                         limit: aiolimiter.AsyncLimiter) -> str:
@@ -30,6 +32,28 @@ async def main():
     print(f"Time: {time_end - time_start:.6f} seconds")
 
 
+def run_profile():
+    tracemalloc.start()
+    profiler = cProfile.Profile()
+    profiler.enable()
+
+    asyncio.run(main())
+
+    snapshot = tracemalloc.take_snapshot()
+    top_stats = snapshot.statistics('lineno')
+
+    print("[ Top 10 memory-consuming lines ]")
+    for stat in top_stats[:10]:
+        print(stat)
+
+    profiler.disable()
+    stats = pstats.Stats(profiler)
+    stats.strip_dirs()
+    stats.sort_stats('cumtime')
+    stats.print_stats(10)
+
+
+
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    run_profile()
